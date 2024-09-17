@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# npm cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Optional: Ignore the local nodemon config
+nodemon.json
+
+# Ignore database or storage files
+*.sqlite
+*.db
+*.dat
+
+# Ignore operating system specific files
+*.DS_Store
+*.Thumbs.db
+*.desktop.ini
