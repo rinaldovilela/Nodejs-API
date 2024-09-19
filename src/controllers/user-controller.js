@@ -37,13 +37,13 @@ function getUser (req, res) {
     }) 
 }
 
-function createUser (req, res) {
-    const {name} = req.body;
-    const sql = `INSERT into clients (name) VALUES ('${name}')`;
-    connection.query(sql, (err, result) => {
+function createUser(req, res) {
+    const { name, age, occupation } = req.body;
+    const sql = 'INSERT INTO clients (name, age, occupation) VALUES (?, ?, ?)';
+    connection.query(sql, [name, age, occupation], (err, result) => {
         if (err) throw err;
-        res.send(result)
-        })
+        res.send(result);
+    });
 }
 
 function updateUser (req, res) {
@@ -56,6 +56,14 @@ function updateUser (req, res) {
     })
 }
 
+function  deleteUser (req, res) {
+    const {id} = req.params;
+    const sql = `DELETE FROM clients WHERE id=${id}`
+    connection.query(sql, (err, result) =>{
+        if (err) throw err;
+        res.send('Client deleted')
+    })
+}
 
 
 
@@ -69,7 +77,7 @@ module.exports = {
     getUser,
     createUser,
     updateUser,
-    // deleteUser
+    deleteUser
 }
 
 
