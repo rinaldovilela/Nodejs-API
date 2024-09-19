@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
 });
 
 
-// // Rota para buscar cliente por ID
 router.get('/:id', controller.getUser );
 
 router.post('/', controller.createUser);
